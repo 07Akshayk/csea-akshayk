@@ -1,28 +1,44 @@
 #include<stdio.h>
-int main()
+#include<stdlib.h>
+#include<string.h>
+void main()
 {
-     int arr[20],i,n,j,temp;
-     printf("Enter the number of elements: ");
+     int a[10],b[10],n,i;
+     printf("enter the size of the array : \n");
      scanf("%d",&n);
-     printf("Enter the elements\n");
-     for(i=0;i<n;i++)
+     printf("enter the array elements : \n");
+     for(i = 0;i<n; i++)
      {
-        scanf("%d",&arr[i]);
-     }
-     for(i=0;i<n-1;i++)
-     {
+         scanf("%d",&a[i]);
 
-             temp=arr[i];
-             arr[i]=arr[n-i-1];
-             arr[n-i-1]=temp;
-      
-        
      }
-     printf("\n\nThe reversed elements are:");
-     for(i=0;i<n;i++)
+     for ( i = 0 ; i<n ; i++)
+
      {
-         printf("%d\t",arr[i]);
+          b[i] = a[n-1-i];
      }
-     return 0;
+
+     printf(" the array elements : \n");
+     for(i = 0;i<n; i++)
+     {
+         printf("%d",b[i]);
+
+     }
+
+     printf("the array elements without 0 are  :\n");
+     for(i = 0;i<n; i++)
+     {
+         if(b[i]== 0)
+         {
+              b[i] = '$';
+         }
+
+     }
+     printf("the new array elements without 0 are ");
+     for(i = 0;i<n; i++)
+     {
+         printf("%d",b[i]);
+
+     }
 
 }
